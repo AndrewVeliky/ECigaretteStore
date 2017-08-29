@@ -3,11 +3,25 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <title>@ViewBag.Title</title>
 </head>
 <body>
-    <div>
-        @RenderBody();
+    <div class="navbar navbar-inverse" role="navigation">
+        <a class="navbar-brand" href="#">ECigarreteStore - магазин электронных сигарет</a>
     </div>
+    <nav class="navbar navbar-default" role="navigation">
+        <!-- Контейнер (определяет ширину Navbar) -->
+        <div class="container-fluid">
+            <!-- Основная часть меню (может содержать ссылки, формы и другие элементы) -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                @Html.Action("Menu", "Navigation")
+            </div>
+        </div>
+    </nav>
+        <div class="col-lg-11">
+            @RenderBody()
+        </div>
 </body>
 </html>
